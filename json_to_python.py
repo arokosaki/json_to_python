@@ -20,7 +20,7 @@ class Formatter:
 
     def INIT_STATMENT(self):
 
-        return  '\tdef __init__(self, {}):\n\n'.format(self.init_param_name)
+        return '\tdef __init__(self, {}):\n\n'.format(self.init_param_name)
 
     @staticmethod
     def ATTRIBUTE_STATEMENT(name, var_type):
@@ -55,7 +55,7 @@ class Formatter:
 
 class JsonToPython:
 
-    def __init__(self, formatter = None):
+    def __init__(self, formatter=None):
 
         self.formatter = formatter or Formatter()
 
@@ -115,11 +115,9 @@ class JsonToPython:
         else:
             raise ValueError('the function only works with parsed json data')
 
-
         result += self.formatter.SUPER_STATEMENT()
 
         result = result.replace('\t', '    ')
-
 
         if subclasses:
             for entry in subclasses:
@@ -128,15 +126,7 @@ class JsonToPython:
 
         return result
 
-    def write_file(self, string, file_name='response_objects',file_path=''):
+    @staticmethod
+    def write_file(self, string, file_name='response_objects', file_path=''):
         with open(file_path + file_name + '.py', 'a') as f:
             f.write(string)
-
-
-def open_file(path):
-    with open(path) as f:
-        return f.read()
-
-
-if __name__ == '__main__':
-    data =
