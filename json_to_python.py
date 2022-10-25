@@ -110,7 +110,7 @@ class JsonToPython:
 
                 else:
                     result += self.formatter.ATTRIBUTE_STATEMENT(key, value.__class__.__name__)
-        if isinstance(json_data, list):
+        elif isinstance(json_data, list):
             self.convert(class_name, json_data[0], parent_name)
         else:
             raise ValueError('the function only works with parsed json data')
@@ -127,6 +127,6 @@ class JsonToPython:
         return result
 
     @staticmethod
-    def write_file(self, string, file_name='response_objects', file_path=''):
+    def write_file(string, file_name='response_objects', file_path=''):
         with open(file_path + file_name + '.py', 'a') as f:
             f.write(string)
