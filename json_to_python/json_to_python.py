@@ -1,10 +1,8 @@
 import inspect
-import pickle
 from importlib import import_module
 from pathlib import Path
 import sys
 
-from jsons import instances, ipams, vpcs
 
 RESPONSE_OBJECTS_PY = 'response_objects.py'
 
@@ -171,11 +169,3 @@ class JsonToPython:
             if not self.file_exists:
                 f.write(self.formatter.bass_class())
             f.write(s)
-
-
-if __name__ == '__main__':
-    # with open(r'C:\Users\Kobi\PycharmProjects\amazon\jsons.pickle', 'rb') as f:
-    #     jsons = pickle.load(f)
-    j = JsonToPython()
-    j.write_code_file('zinstavc', instances)
-    # print(type(str) == type)
