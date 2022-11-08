@@ -7,13 +7,13 @@ here = pathlib.Path(__file__).parent.resolve()
 # Get the long description from the README file
 long_description = (here / "README.md").read_text(encoding="utf-8")
 setup(name='json_to_python',
-      version='0.1',
+      version='0.2',
       description='converts api json responses to python objects',
       url='https://github.com/arokosaki/json_to_python',
       author='kobi kolodner',
       author_email='kobi@commugen.com',
       license='MIT',
-      packages=['.'],
+      packages=['json_to_python'],
       classifiers=[
             'Development Status :: 2 - Pre-Alpha'
       ],
