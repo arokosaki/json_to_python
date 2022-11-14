@@ -168,4 +168,5 @@ class JsonToPython:
         with self.file.open('a') as f:
             if not self.file_exists:
                 f.write(self.formatter.bass_class())
+                self.file_exists = True
             f.write(s)
